@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 /**
  * Class representing game object
+ *
  * @author Saji
  */
 public class Game implements Serializable {

@@ -20,7 +20,7 @@ public class UnitSpawningServiceTest {
     @Test
     public void testShouldApplyApplicableStrategy() {
         SpawningStrategy<Knight, Dragon> spawningStrategy = createUpdateKnightStrategy(true, KNIGHT_NAME, 0, 0);
-        UnitSpawningService<Knight, Dragon> testInstance = new UnitSpawningService<>(0, 0,0, Arrays.asList(spawningStrategy));
+        UnitSpawningService<Knight, Dragon> testInstance = new UnitSpawningService<>(0, 0, 0, Arrays.asList(spawningStrategy));
         Knight knight = testInstance.spawn(null, null);
         Assert.assertEquals(KNIGHT_NAME, knight.getName());
     }
@@ -28,7 +28,7 @@ public class UnitSpawningServiceTest {
     @Test
     public void testApplyOnlyApplicableStrategy() {
         SpawningStrategy<Knight, Dragon> spawningStrategy = createUpdateKnightStrategy(false, KNIGHT_NAME, 0, 0);
-        UnitSpawningService<Knight, Dragon> testInstance = new UnitSpawningService<>(0, 0,0, Arrays.asList(spawningStrategy));
+        UnitSpawningService<Knight, Dragon> testInstance = new UnitSpawningService<>(0, 0, 0, Arrays.asList(spawningStrategy));
         Knight knight = testInstance.spawn(null, null);
         Assert.assertNull(knight);
     }
@@ -36,7 +36,7 @@ public class UnitSpawningServiceTest {
     @Test
     public void testShouldUseAllPoints() {
         SpawningStrategy<Knight, Dragon> spawningStrategy = createUpdateKnightStrategy(true, KNIGHT_NAME, 0, 0);
-        UnitSpawningService<Knight, Dragon> testInstance = new UnitSpawningService<>(1, 0,1, Arrays.asList(spawningStrategy));
+        UnitSpawningService<Knight, Dragon> testInstance = new UnitSpawningService<>(1, 0, 1, Arrays.asList(spawningStrategy));
         try {
             Knight knight = testInstance.spawn(null, null);
             Assert.fail("Should use all points when creating a unit");
@@ -48,7 +48,7 @@ public class UnitSpawningServiceTest {
     @Test
     public void testShouldValidateMaxPoints() {
         SpawningStrategy<Knight, Dragon> spawningStrategy = createUpdateKnightStrategy(true, KNIGHT_NAME, 2, 0);
-        UnitSpawningService<Knight, Dragon> testInstance = new UnitSpawningService<>(2, 0,1, Arrays.asList(spawningStrategy));
+        UnitSpawningService<Knight, Dragon> testInstance = new UnitSpawningService<>(2, 0, 1, Arrays.asList(spawningStrategy));
         try {
             Knight knight = testInstance.spawn(null, null);
             Assert.fail("Should not allow to have stats higher than max attribute specified");
@@ -60,7 +60,7 @@ public class UnitSpawningServiceTest {
     @Test
     public void testShouldValidateMinPoints() {
         SpawningStrategy<Knight, Dragon> spawningStrategy = createUpdateKnightStrategy(true, KNIGHT_NAME, -1, 3);
-        UnitSpawningService<Knight, Dragon> testInstance = new UnitSpawningService<>(2, 0,3, Arrays.asList(spawningStrategy));
+        UnitSpawningService<Knight, Dragon> testInstance = new UnitSpawningService<>(2, 0, 3, Arrays.asList(spawningStrategy));
         try {
             Knight knight = testInstance.spawn(null, null);
             Assert.fail("Should not allow to have stats lower than min attribute specified");
@@ -70,7 +70,7 @@ public class UnitSpawningServiceTest {
     }
 
     private SpawningStrategy<Knight, Dragon> createUpdateKnightStrategy(boolean isApplicable, String name, int armor, int attack) {
-        SpawningStrategy<Knight, Dragon> spawningStrategy = new SpawningStrategy<Knight, Dragon>() {
+        return new SpawningStrategy<Knight, Dragon>() {
             @Override
             public boolean isApplicable(WeatherCodeEnum weatherCodeEnum) {
                 return isApplicable;
@@ -87,7 +87,6 @@ public class UnitSpawningServiceTest {
                 return testKnight;
             }
         };
-        return spawningStrategy;
     }
 
 }

@@ -26,23 +26,22 @@ public class NormalDragonSpawningStrategyTest {
 
     @Test
     public void testSpawnDragon() throws Exception {
-        Knight knight = createKnight(3,3,8,6);
+        Knight knight = createKnight(3, 3, 8, 6);
         Dragon dragon = testInstance.spawn(knight);
-        assertDragon(dragon, 3, 2, 5,  10);
+        assertDragon(dragon, 3, 2, 5, 10);
 
         knight = createKnight(6, 6, 4, 4);
         dragon = testInstance.spawn(knight);
-        assertDragon(dragon, 9, 5, 3,  3);
+        assertDragon(dragon, 9, 5, 3, 3);
 
         knight = createKnight(5, 5, 5, 5);
         dragon = testInstance.spawn(knight);
-        assertDragon(dragon, 8, 4, 4,  4);
+        assertDragon(dragon, 8, 4, 4, 4);
 
         knight = createKnight(2, 2, 8, 8);
         dragon = testInstance.spawn(knight);
-        assertDragon(dragon, 2, 1, 10,  7);
+        assertDragon(dragon, 2, 1, 10, 7);
     }
-
 
 
     private void assertDragon(Dragon dragon, int clawSharpness, int scaleThickness, int fireBreath, int wingStrength) {

@@ -19,7 +19,10 @@ import com.dak.service.strategy.NormalDragonSpawningStrategy;
 import com.dak.service.strategy.RainDragonSpawningStrategy;
 
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -32,7 +35,7 @@ public class DragonsAndKnights {
     private static WeatherReportDTOMapper weatherReportDTOMapper = new WeatherReportDTOMapper();
     private static DragonDTOMapper dragonDTOMapper = new DragonDTOMapper();
     private static BattleResultDTOMapper battleResultDTOMapper = new BattleResultDTOMapper();
-    private static SpawningService<Dragon, Knight> dragonSpawningService = new UnitSpawningService(20, 0, 10,
+    private static SpawningService<Dragon, Knight> dragonSpawningService = new UnitSpawningService<>(20, 0, 10,
             Arrays.asList(new NormalDragonSpawningStrategy(), new RainDragonSpawningStrategy(), new DryDragonSpawningStrategy()));
 
     public static void main(String... args) {

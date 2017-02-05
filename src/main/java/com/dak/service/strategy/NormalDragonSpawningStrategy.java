@@ -16,7 +16,7 @@ public class NormalDragonSpawningStrategy implements SpawningStrategy<Dragon, Kn
 
     private static final int MIN_ATTRIBUTE = 0;
     private static final int MAX_ATTRIBUTE = 10;
-    private static final int TOTAL_POINTS =  20;
+    private static final int TOTAL_POINTS = 20;
     private static final EnumSet<WeatherCodeEnum> APPLICABLE_WEATHER = EnumSet.of(WeatherCodeEnum.NORMAL, WeatherCodeEnum.FOG, WeatherCodeEnum.STORM);
 
     @Override
@@ -51,7 +51,7 @@ public class NormalDragonSpawningStrategy implements SpawningStrategy<Dragon, Kn
         while (freePoints > 0) {
             for (Attribute dragonAttribute : dragonAttributes) {
                 freePoints += increaseAttribute(dragonAttribute);
-                if(freePoints == 0) {
+                if (freePoints == 0) {
                     break;
                 }
             }
@@ -67,18 +67,18 @@ public class NormalDragonSpawningStrategy implements SpawningStrategy<Dragon, Kn
     }
 
     private int increaseAttribute(Attribute attribute) {
-        if (attribute.getValue()+1 > MAX_ATTRIBUTE) {
+        if (attribute.getValue() + 1 > MAX_ATTRIBUTE) {
             return 0;
         }
-        attribute.setValue(attribute.getValue()+1);
+        attribute.setValue(attribute.getValue() + 1);
         return -1;
     }
 
     private int decreaseAttribute(Attribute attribute) {
-        if (attribute.getValue()-1 < MIN_ATTRIBUTE) {
+        if (attribute.getValue() - 1 < MIN_ATTRIBUTE) {
             return 0;
         }
-        attribute.setValue(attribute.getValue()-1);
+        attribute.setValue(attribute.getValue() - 1);
         return 1;
     }
 

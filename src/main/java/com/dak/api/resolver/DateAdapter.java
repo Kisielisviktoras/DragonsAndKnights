@@ -10,7 +10,7 @@ import java.util.Locale;
  */
 public class DateAdapter extends XmlAdapter<String, Date> {
 
-    private SimpleDateFormat dateFormat = new SimpleDateFormat("EEE MMM dd yyyy HH:mm:ss 'GMT'z '('Z')'", Locale.ENGLISH);
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("EEE MMM dd yyyy HH:mm:ss 'GMT'z '('Z')'", Locale.ENGLISH);
 
     public Date unmarshal(String v) throws Exception {
         return dateFormat.parse(v);

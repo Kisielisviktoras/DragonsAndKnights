@@ -13,7 +13,7 @@ public enum AttributeTypeEnum {
     FIRE_BREATH("FireBreath"),
     WING_STRENGTH("WingStrength");
 
-    private String name;
+    private final String name;
 
     AttributeTypeEnum(String name) {
         this.name = name;

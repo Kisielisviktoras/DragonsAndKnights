@@ -5,8 +5,6 @@ import com.dak.domain.constants.WeatherCodeEnum;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * @author Saji
  */

@@ -1,11 +1,11 @@
 package com.dak.domain;
 
-import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
 /**
  * Class representing knight entity
+ *
  * @author Saji
  */
 public class Knight implements Trainable {
@@ -58,10 +58,10 @@ public class Knight implements Trainable {
     @Override
     public String toString() {
         return "Knight{" +
-                attack.getType().getName() +"="+attack.getValue()+", "+
-                armor.getType().getName() +"="+armor.getValue()+", "+
-                agility.getType().getName() +"="+agility.getValue()+", "+
-                endurance.getType().getName() +"="+endurance.getValue()+", "+
+                attack.getType().getName() + "=" + attack.getValue() + ", " +
+                armor.getType().getName() + "=" + armor.getValue() + ", " +
+                agility.getType().getName() + "=" + agility.getValue() + ", " +
+                endurance.getType().getName() + "=" + endurance.getValue() + ", " +
                 '}';
     }
 

@@ -1,12 +1,12 @@
 package com.dak.api.client;
 
 import com.dak.api.dto.WeatherReportDTO;
-import com.dak.domain.WeatherReport;
 
 import javax.ws.rs.core.MediaType;
 
 /**
  * Client responsible for communicating with Weather API
+ *
  * @author Saji
  */
 public class WeatherClient extends AbstractClient {

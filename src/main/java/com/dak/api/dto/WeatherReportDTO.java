@@ -1,6 +1,5 @@
 package com.dak.api.dto;
 
-import com.dak.domain.Coordinates;
 import com.dak.api.resolver.DateAdapter;
 
 import javax.xml.bind.annotation.XmlElement;
@@ -52,6 +51,7 @@ public class WeatherReportDTO implements Serializable {
     public void setMessage(String message) {
         this.message = message;
     }
+
     @XmlElement(name = "varX-Rating")
     public String getRating() {
         return rating;
